@@ -53,7 +53,9 @@ i{
 p{
     color: #CBD5E1;
 }
-
+.menu-hamburguer {
+    display: none; /* o menu não aparece no desktop*/
+}
 
 /* Seção inicial do site*/
 #hero{
@@ -61,9 +63,9 @@ p{
     font-size: 30px;
     color:#F8FAFC;
     padding: 25px;
-
     background-image: url('../imagens/imagem_fundo.png');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     height: 90vh;
 }
@@ -291,6 +293,10 @@ h3{
     background-color: #0F172A;
 }
 
+#sobre-mim h3{
+    font-size: 30px;
+    color: #E2E8F0;
+}
 
 .principal-sobre{
     display: flex;
@@ -319,7 +325,6 @@ h3{
     box-shadow:15px 10px 20px #3B82F64D;
 }
 
-
 .conteiner-sobre{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -341,15 +346,6 @@ h3{
     transform:translateY(-8px);
     border-color:#3B82F6;
     box-shadow:0 10px 15px #3B82F64D;
-}
-
-
-
-
-
-#sobre-mim h3{
-    font-size: 30px;
-    color: #E2E8F0;
 }
 
 .carrosel-ferramentas{
@@ -402,14 +398,6 @@ h3{
         transform:translateX(-60%);
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -532,7 +520,6 @@ footer{
 }
 
 .apps-footer{
-
     display: flex;
     gap: 40px;
     margin-top: 25px;
@@ -573,3 +560,435 @@ footer{
 }
 
 
+
+/* =====================================================
+   RESPONSIVIDADE - TABLET
+   Telas de até 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /*  NAVBAR  */
+
+    .navbar {
+        position: relative;
+        height: auto;
+        padding: 15px 25px;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 0;
+        background-color: #0F172A;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Botão hamburguer */
+    .menu-hamburguer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-hamburguer:hover {
+        background-color: transparent;
+    }
+
+    .menu-hamburguer i {
+        font-size: 25px;
+    }
+
+
+    /*  HERO  */
+
+    #hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 30px 20px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .left {
+        width: 70%;
+        padding: 40px 20px;
+    }
+
+    .tag-hero {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    .titulo-hero {
+        font-size: 45px;
+    }
+
+    .subtitulo-hero {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        gap: 15px;
+    }
+
+    .button-hero {
+        width: 160px;
+        font-size: 17px;
+    }
+
+
+    /*  SERVIÇOS  */
+
+    #serviços {
+        padding: 50px 30px;
+    }
+
+    .conteiner-servicos {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+
+    /*  PROJETOS  */
+
+    #projetos {
+        padding: 50px 30px;
+    }
+
+    .conteiner-projetos {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .buttons-projetos {
+        gap: 15px;
+    }
+
+    .buttons-projetos button {
+        width: 110px;
+    }
+
+
+    /*  SOBRE MIM  */
+
+    #sobre-mim {
+        padding: 50px 30px;
+    }
+
+    .principal-sobre {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-sobre,
+    .right-sobre {
+        width: 100%;
+    }
+
+    .left-sobre {
+        padding: 20px;
+    }
+
+    .right-sobre img {
+        width: 280px;
+    }
+
+    .conteiner-sobre {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+
+    /*  CARROSSEL  */
+
+    .card-ferramenta {
+        min-width: 180px;
+    }
+
+    /*  CONTATO  */
+
+    #contato {
+        flex-direction: column;
+        padding: 50px 30px;
+        gap: 40px;
+    }
+
+    .left-contato,.right {
+        width: 100%;
+    }
+
+
+    /*  FOOTER  */
+
+    footer {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .footer1 {
+        width: 45%;
+    }
+
+    .navegacao-footer {
+        width: 45%;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - CELULAR
+   Telas de até 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+
+    /*  NAVBAR  */
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .nav-links {
+        top: 80px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-hamburguer:hover {
+        background-color: transparent;
+    }
+
+
+    /*  HERO  */
+
+    #hero {
+        min-height: 90vh;
+        padding: 20px;
+        background-position: center;
+    }
+
+    .left {
+        width: 100%;
+        padding: 40px 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tag-hero {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .titulo-hero {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
+    .subtitulo-hero {
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .button-hero {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    .titulo-sections {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .tag {
+        font-size: 18px;
+        text-align: center;
+    }
+
+
+    /*  SERVIÇOS  */
+
+    #serviços {
+        padding: 50px 20px;
+    }
+
+    .conteiner-servicos {
+        grid-template-columns: 1fr;
+        padding: 10px 0;
+    }
+
+    .card-servicos {
+        width: 100%;
+    }
+
+
+    /*  PROJETOS  */
+
+    #projetos {
+        padding: 50px 20px;
+    }
+
+    .conteiner-projetos {
+        grid-template-columns: 1fr;
+        padding: 10px 0;
+    }
+
+    .card-projetos {
+        width: 100%;
+    }
+
+    .card-projetos img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .descricao-projetos {
+        padding: 20px;
+    }
+
+    .techs {
+        gap: 20px;
+    }
+
+    .buttons-projetos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons-projetos button {
+        width: 100%;
+    }
+
+
+    /*  SOBRE MIM  */
+
+    #sobre-mim {
+        padding: 50px 20px;
+    }
+
+    .principal-sobre {
+        margin-bottom: 30px;
+    }
+
+    .left-sobre {
+        padding: 10px;
+    }
+
+    .left-sobre p {
+        font-size: 16px;
+        text-indent: 0;
+        line-height: 1.6;
+    }
+
+    .right-sobre img {
+        width: 230px;
+    }
+
+    .conteiner-sobre {
+        grid-template-columns: 1fr;
+        padding: 10px 0;
+    }
+
+    .card-sobre {
+        width: 100%;
+    }
+
+    .card-ferramenta {
+        min-width: 160px;
+        padding: 15px 20px;
+    }
+
+    .card-ferramenta i {
+        font-size: 30px;
+    }
+
+    .card-ferramenta span {
+        font-size: 16px;
+    }
+
+
+    /*  CONTATO  */
+
+    #contato {
+        padding: 50px 20px;
+    }
+
+    .left-contato {
+        text-align: center;
+    }
+
+    .right {
+        padding: 25px 20px;
+    }
+
+
+    /*  FOOTER  */
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .footer1,.navegacao-footer {
+        width: 100%;
+        align-items: center;
+    }
+
+    .footer1 .logo img {
+        width: 200px;
+    }
+
+    .apps-footer {
+        gap: 30px;
+    }
+
+}
