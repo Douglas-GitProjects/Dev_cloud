@@ -760,10 +760,10 @@ footer{
 
 /* =====================================================
    RESPONSIVIDADE - CELULAR
-   Telas de até 480px
+   Telas de até 620px
 ===================================================== */
 
-@media (max-width: 580px) {
+@media (max-width: 620px) {
 
 
     /*  NAVBAR  */
